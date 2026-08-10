@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-canvas: var(--canvas);
+  --color-canvas-raised: var(--canvas-raised);
+  --color-line: var(--line);
+  --color-saffron: var(--saffron);
+  --color-saffron-soft: var(--saffron-soft);
+  --color-maroon: var(--maroon);
+  --color-gold: var(--gold);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --font-hi: var(--font-noto-devanagari);
+  --font-ta: var(--font-noto-tamil);
+  --font-te: var(--font-noto-telugu);
+  --font-kn: var(--font-noto-kannada);
+}
+
+:root {
+  --ink: #2a1c16;
+  --ink-soft: #6b5749;
+  --canvas: #fbf5ea;
+  --canvas-raised: #ffffff;
+  --line: #e8dcc7;
+  --saffron: #e2823a;
+  --saffron-soft: #f6e2c8;
+  --maroon: #7a2036;
+  --gold: #b8872b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f3e9db;
+    --ink-soft: #c8b8a4;
+    --canvas: #17110f;
+    --canvas-raised: #221a16;
+    --line: #3a2c22;
+    --saffron: #f0a35e;
+    --saffron-soft: #3a2818;
+    --maroon: #e88ba0;
+    --gold: #e0b95c;
+  }
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--saffron-soft);
+  color: var(--maroon);
+}
+
+.diya-glow {
+  background: radial-gradient(circle, color-mix(in srgb, var(--saffron) 35%, transparent) 0%, transparent 70%);
+}
+
+.om-watermark {
+  font-family: var(--font-hi);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  45% { opacity: 0.85; transform: scaleY(0.96); }
+  55% { opacity: 0.95; transform: scaleY(1.03); }
+}
+
+.animate-flicker {
+  animation: flicker 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes drift {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.animate-drift {
+  animation: drift 7s ease-in-out infinite;
+}

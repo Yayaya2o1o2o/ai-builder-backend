@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Flow — Tabroom, simplified</title>
+  <meta name="description" content="A clean, phone-friendly way to see your Tabroom pairings, rooms, judges and results.">
+  <meta name="theme-color" content="#4338ca">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <img src="/icon.svg" alt="" width="28" height="28">
+      <span>Flow</span>
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#/" data-nav="home">My rounds</a>
+      <a href="#/tournaments" data-nav="tournaments">Tournaments</a>
+      <a href="#/account" data-nav="account">Account</a>
+    </nav>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <nav class="tabbar" aria-label="Main">
+    <a href="#/" data-nav="home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      <span>My rounds</span>
+    </a>
+    <a href="#/tournaments" data-nav="tournaments">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v3a5 5 0 0 1-10 0zM5 5H3v2a4 4 0 0 0 4 4M19 5h2v2a4 4 0 0 1-4 4M12 12v4M8 20h8M10 16h4v4h-4z"/></svg>
+      <span>Tournaments</span>
+    </a>
+    <a href="#/account" data-nav="account">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      <span>Account</span>
+    </a>
+  </nav>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

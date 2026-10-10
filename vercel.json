@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm install",
+  "buildCommand": "echo 'static site + /api function, nothing to build'",
+  "outputDirectory": "web/public",
+  "functions": {
+    "api/router.ts": { "maxDuration": 30 }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/router?__path=:path*" }
+  ]
+}

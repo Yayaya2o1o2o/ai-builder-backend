@@ -56,6 +56,13 @@ The parser tests use HTML fixtures in `tabroom/fixtures/`, rebuilt by hand from 
 
 ## Deploy
 
+**Vercel**: this repo deploys as-is. `vercel.json` serves `web/public` as the site and runs
+`api/router.ts` as one serverless function for every `/api/*` request, using the same handlers as Encore.
+In the Vercel project, set the environment variable `TABROOM_SESSION_KEY` to a long random string.
+Without it, a key is derived from the project id, which works but isn't secret.
+
+**Encore**:
+
 ```bash
 git push encore
 ```

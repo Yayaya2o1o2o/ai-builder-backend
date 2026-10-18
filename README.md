@@ -2,6 +2,8 @@
 
 This is a RESTful API Starter with a single Hello World API endpoint.
 
+> **Guide Stick app:** see [`walking-stick-app/README.md`](walking-stick-app/README.md) (phone app) and [`firmware/README.md`](firmware/README.md) (optional cane sensor).
+
 ## Prerequisites 
 
 **Install Encore:**
